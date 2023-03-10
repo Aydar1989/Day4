@@ -1,32 +1,25 @@
-iinclude <stdio.h>
-#include <stdlib.h>
- 
-int fib(int n,int a, int b) {
-    int f;
-    if(n==0) return a;
-    else if(n==1) return b;
-    else
-    {
-        f = fib(n-1,a,b)+fib(n-2,a,b);
-        printf("%d\n", f);
-        return f;
-    }
-}
+#include <stdio.h>
+
+
+int fib (int f); 
+   
+
 int main()
 {
-    int n;
-    while(1)
-    {
-        if (!scanf("%d", &n) || (n<=2 || n>2000000))
-        {
-            fflush(stdin);
-            continue;
-        }
-        fflush(stdin);
-        break;
-    }
-    fib(n, 0, 1);
+    int f, b;
+    b =scanf("%d", &f);
+    if (b ==1) 
+	 printf("%d", fib(f));
+	else printf("n/a");
     return 0;
 }
+
+int fib(int f) {
+	if (f==0) 
+	return 0;
+	if (f==1)
+ 	return 1;
+        return fib(f-1) + fib(f-2);
+ }
 
 
